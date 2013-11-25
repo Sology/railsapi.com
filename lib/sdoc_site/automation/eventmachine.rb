@@ -28,6 +28,7 @@ protected
     options << '--charset' << 'utf-8'
     options << '--title' << name
     options << '-T' << 'direct'
+    options << '-f' << 'sdoc'
     options << '--main' << 'README.rdoc' if File.exists? 'README.rdoc'
     options << '--main' << 'README'      if File.exists? 'README'
     options << '--main' << 'docs/README' if File.exists? 'docs/README'

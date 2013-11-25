@@ -3,7 +3,7 @@ require "sdoc_site/automation/github"
 
 class SDocSite::Automation::Nokogiri < SDocSite::Automation::Github
   def initialize automation
-    super automation, 'git://github.com/tenderlove/nokogiri.git'
+    super automation, 'git://github.com/sparklemotion/nokogiri.git'
   end
   
 protected

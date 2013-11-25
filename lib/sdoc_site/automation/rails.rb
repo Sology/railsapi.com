@@ -14,6 +14,7 @@ protected
     options << '--charset' << 'utf-8'
     options << "--title" << "Ruby on Rails"
     options << '-T' << 'direct'
+    options << '-f' << 'sdoc'
     options << '--main' << 'README'
     
     file_list = Rake::FileList.new

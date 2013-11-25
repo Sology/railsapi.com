@@ -3,7 +3,7 @@ require "sdoc_site/automation/github"
 
 class SDocSite::Automation::Haml < SDocSite::Automation::Github
   def initialize automation
-    super automation, 'git://github.com/nex3/haml.git'
+    super automation, 'git://github.com/haml/haml.git'
   end
   
 protected
@@ -14,6 +14,7 @@ protected
     options << '--charset' << 'utf-8'
     options << '--title' << 'Haml/Sass'
     options << '-T' << 'direct'
+    options << '-f' << 'sdoc'
     options << '--main' << 'README.rdoc'
     
     file_list = Rake::FileList.new

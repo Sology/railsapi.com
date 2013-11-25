@@ -20,23 +20,23 @@ class SDocSite::Automation::Ruby
   end
   
   def versions_to_build
-    2
+    1
   end
   
   def available_versions
-    [SDocSite::Version.new('1.8'), SDocSite::Version.new('1.9')]
+    [SDocSite::Version.new('1.9')]
   end
   
   def build_doc version
     @tmp_path = @automation.temp_dir
     doc_dir = @automation.temp_dir
-    if version.minor == '8'
-      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v1_8_7_174 #{@tmp_path}`
+    if version.minor == '9'
+      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v1_9_1_0 #{@tmp_path}`
       in_tmp do
-        run_sdoc_1_8 doc_dir
+        run_sdoc_1_9 doc_dir
       end
     else
-      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v1_9_1_0 #{@tmp_path}`
+      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v2_0_0_0 #{@tmp_path}`
       in_tmp do
         run_sdoc_1_9 doc_dir
       end
@@ -52,6 +52,7 @@ protected
     options << '--line-numbers' 
     options << '--main' << 'README'
     options << '--title' << 'Ruby'
+    options << '-f' << 'sdoc'
     options << '-T' << 'direct'
     file_list = Rake::FileList.new
     file_list.include('README')
@@ -81,6 +82,7 @@ protected
     options << "-o" << target
     options << "-a"
     options << '--line-numbers' 
+    options << '-f' << 'sdoc'
     options << '-T' << 'direct'
     options << '--title' << 'Ruby'
     options << '--main' << 'README'

@@ -2,6 +2,9 @@ require 'sinatra'
 require "sdoc_site"
 require "sdoc_site/builds"
 
+register Sinatra::Index
+use_static_index 'index.html'
+
 get '/doc/:something' do
   redirect "/doc/#{params[:something]}/"
 end
