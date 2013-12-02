@@ -24,18 +24,18 @@ class SDocSite::Automation::Ruby
   end
   
   def available_versions
-    [SDocSite::Version.new('1.9')]
+    [SDocSite::Version.new('2.0.0')]
   end
   
   def build_doc version
     @tmp_path = @automation.temp_dir
     doc_dir = @automation.temp_dir
-    if version.minor == '9'
-      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v1_9_1_0 #{@tmp_path}`
+    if true
+      `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v1_9_3_0 #{@tmp_path}`
       in_tmp do
         run_sdoc_1_9 doc_dir
       end
-    else
+		elsif true
       `svn checkout http://svn.ruby-lang.org/repos/ruby/tags/v2_0_0_0 #{@tmp_path}`
       in_tmp do
         run_sdoc_1_9 doc_dir

@@ -15,6 +15,7 @@ protected
     options << '--title' << 'Hpricot'
     options << '-T' << 'direct'
     options << '--main' << 'README'
+		options << '-f' << 'sdoc'
     
     file_list = Rake::FileList.new
     file_list.include('README')

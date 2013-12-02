@@ -15,6 +15,7 @@ protected
     options << '--title' << 'Nokogiri'
     options << '-T' << 'direct'
     options << '--main' << 'README.rdoc'
+		options << '-f' << 'sdoc'
     
     file_list = Rake::FileList.new
     file_list.include('*.rdoc')

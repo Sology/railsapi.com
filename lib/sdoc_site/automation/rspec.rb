@@ -14,6 +14,7 @@ protected
     options << '--charset' << 'utf-8'
     options << '--title' << 'RSpec'
     options << '-T' << 'direct'
+		options << '-f' << 'sdoc'
     if File.exists? 'README.rdoc'
       options << '--main' << 'README.rdoc' 
     else

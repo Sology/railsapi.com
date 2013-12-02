@@ -3,6 +3,9 @@ rdoc/
 rdoc.zip
 rails/
 public/doc/
+vendor/
+.bundle/
+doc/
 versions.yaml
 public/index.html
 sinatra.log
